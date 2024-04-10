@@ -7,11 +7,11 @@ class UserInterface:
     def start():
         UserInterface.welcome_banner()
         install_params = UserInterface.get_params()
-        SystemConfiguration.start(*install_params)
+        SystemConfiguration.start(**install_params)
 
     @staticmethod
     def welcome_banner():
-        os.system("sh Builder/assets/startup.sh")        
+        os.system("sh Builder/assets/startup.sh")
 
     @staticmethod
     def is_verify_response(text) -> bool:
@@ -22,19 +22,23 @@ class UserInterface:
 
     @staticmethod
     def get_params():
-        print("1) Install all dotfiles? [Y/n]: ", end="")
-        option_1 = UserInterface.is_verify_response(input())
-        
-        print("2) Update Arch DataBase? [Y/n] ", end="")
-        option_2 = UserInterface.is_verify_response(input())
+        options = {}
+        print(f"{len(options) + 1}) Install all dotfiles? [y/N]: ", end="")
+        options["dotfiles"] = UserInterface.is_verify_response(input())
 
-        print("3) Install BSPWM Dependencies? [Y/n] ", end="")
-        option_3 = UserInterface.is_verify_response(input())
+        print(f"{len(options) + 1}) Update Arch DataBase? [y/N] ", end="")
+        options["arch_db_update"] = UserInterface.is_verify_response(input())
 
-        print("4) Install Dev Dependencies? [Y/n] ", end="")
-        option_4 = UserInterface.is_verify_response(input())
-        
-        print("5) Install Nvidia & Intel Drivers? [Y/n] ", end="")
-        option_5 = UserInterface.is_verify_response(input())
+        print(f"{len(options) + 1}) Install BSPWM Dependencies? [y/N] ", end="")
+        options["bspwn_deps"] = UserInterface.is_verify_response(input())
 
-        return [option_1, option_2, option_3, option_4, option_5]
+        print(f"{len(options) + 1}) Install Dev Dependencies? [y/N] ", end="")
+        options["dev_deps"] = UserInterface.is_verify_response(input())
+
+        print(f"{len(options) + 1}) Install AMD GPU Drivers? [y/N] ", end="")
+        options["amd_gpu"] = UserInterface.is_verify_response(input())
+
+        print(f"{len(options) + 1}) Configure zsh theme? [y/N]", end="")
+        options["configure_zsh"] = UserInterface.is_verify_response(input())
+
+        return options

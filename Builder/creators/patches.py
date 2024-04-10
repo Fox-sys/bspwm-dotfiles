@@ -1,5 +1,6 @@
 import os
 
+
 class PatchSystemBugs:
     @staticmethod
     def enable_all_patches():
@@ -13,7 +14,7 @@ class PatchSystemBugs:
 
     @staticmethod
     def __make_fish_the_default():
-        os.system("chsh -s /usr/bin/fish")
+        os.system("chsh -s /usr/bin/zsh")
 
     @staticmethod
     def __assign_permissions_to_configs():

@@ -2,46 +2,48 @@ import os
 import packages
 
 from logger import Logger, LoggerStatus
-from creators.software import AurBuilder, FirefoxCustomize
+from creators.software import AurBuilder, ZshBuilder
 from creators.drivers import GraphicDrivers
 from creators.patches import PatchSystemBugs
 from creators.daemons import Daemons
 
+
 # TODO: Implement error handling for package installation
 
 class SystemConfiguration:
-    def start(*args):
-        start_text = f"[+] Starting assembly. Options {args}"
+    def start(**kwargs):
+        start_text = f"[+] Starting assembly. Options {kwargs}"
         Logger.add_record(start_text, status=LoggerStatus.SUCCESS)
-        if args[0]: SystemConfiguration.__start_option_1()
-        if args[1]: SystemConfiguration.__start_option_2()
-        if args[2]: SystemConfiguration.__start_option_3()
-        if args[3]: SystemConfiguration.__start_option_4()
-        if args[4]: GraphicDrivers.build()
-        # TODO: The process should not be repeated when reassembling, important components should only be updated with new ones
+        if kwargs['dotfiles']: SystemConfiguration._install_dotfiles()
+        if kwargs['arch_db_update']: SystemConfiguration._update_arch_db()
+        if kwargs['bspwn_deps']: SystemConfiguration._install_bspwn_deps()
+        if kwargs['dev_deps']: SystemConfiguration._install_dev_deps()
+        if kwargs['amd_gpu']: GraphicDrivers.build()
+        if kwargs['configure_zsh']: ZshBuilder.build()
+        # TODO: The process should not be repeated when reassembling,
+        #  important components should only be updated with new ones
         Daemons.enable_all_daemons()
         PatchSystemBugs.enable_all_patches()
 
     @staticmethod
-    def __start_option_1():
+    def _install_dotfiles():
         SystemConfiguration.__create_default_folders()
         SystemConfiguration.__copy_bspwm_dotfiles()
 
     @staticmethod
-    def __start_option_2():
+    def _update_arch_db():
         Logger.add_record("[+] Updates Enabled", status=LoggerStatus.SUCCESS)
         os.system("sudo pacman -Sy")
 
     @staticmethod
-    def __start_option_3():
+    def _install_bspwn_deps():
         Logger.add_record("[+] Installed BSPWM Dependencies", status=LoggerStatus.SUCCESS)
         AurBuilder.build()
         SystemConfiguration.__install_pacman_package(packages.BASE_PACKAGES)
         SystemConfiguration.__install_aur_package(packages.AUR_PACKAGES)
-        FirefoxCustomize.build()
 
     @staticmethod
-    def __start_option_4():
+    def _install_dev_deps():
         Logger.add_record("[+] Installed Dev Dependencies", status=LoggerStatus.SUCCESS)
         SystemConfiguration.__install_pacman_package(packages.DEV_PACKAGES)
         SystemConfiguration.__install_pacman_package(packages.GNOME_OFFICIAL_TOOLS)
@@ -70,6 +72,7 @@ class SystemConfiguration:
         os.system("mkdir -p ~/.config")
         os.system(f"mkdir -p {default_folders}")
         os.system("cp -r Images/ ~/")
+        os.system("mkdir ~/.fonts")
 
     @staticmethod
     def __copy_bspwm_dotfiles():
@@ -81,3 +84,4 @@ class SystemConfiguration:
         os.system("cp -r themes ~/.themes")
         os.system("cp xinitrc ~/.xinitrc")
         os.system("cp -r bin/ ~/")
+        os.system("cp -r fonts/* ~/.fonts")

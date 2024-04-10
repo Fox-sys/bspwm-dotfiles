@@ -1,6 +1,7 @@
 import os
 from logger import Logger, LoggerStatus
 
+
 # TODO: !DEPRECATED
 
 class GraphicDrivers:
@@ -15,14 +16,15 @@ class GraphicDrivers:
     def __install_hybrid_drivers():
         Logger.add_record("[+] Install Nvidia & Intel Drivers", status=LoggerStatus.SUCCESS)
         os.system("sudo pacman -S mesa")
-        os.system("sudo pacman -S lib32-mesa")
-        os.system("sudo pacman -S xf86-video-nouveau xf86-video-intel vulkan-intel")
+        os.system("sudo pacman -S xf86-video-amdgpu lib32-mesa vulkan-radeon"
+                  " lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader")
 
     @staticmethod
     def __prepare_multilib():
         Logger.add_record("[+] Prepare Multilib", status=LoggerStatus.SUCCESS)
         os.system(r"sudo sed -i 's/^#\[multilib\]/[multilib]/' /etc/pacman.conf")
-        os.system(r"sudo sed -i '/^\[multilib\]$/,/^\[/ s/^#\(Include = \/etc\/pacman\.d\/mirrorlist\)/\1/' /etc/pacman.conf")
+        os.system(
+            r"sudo sed -i '/^\[multilib\]$/,/^\[/ s/^#\(Include = \/etc\/pacman\.d\/mirrorlist\)/\1/' /etc/pacman.conf")
 
     @staticmethod
     def __update_multilib_repo():
