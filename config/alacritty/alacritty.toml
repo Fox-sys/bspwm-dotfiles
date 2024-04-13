@@ -1,4 +1,4 @@
-import = ["/home/user/.config/alacritty/themes/custom.toml"]
+import = ["~/.config/alacritty/themes/custom.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -49,7 +49,7 @@ save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [shell]
-program = "/usr/bin/fish"
+program = "/usr/bin/bash"
 
 [window]
 dynamic_title = true

@@ -19,6 +19,7 @@ class SystemConfiguration:
         if kwargs['bspwn_deps']: SystemConfiguration._install_bspwn_deps()
         if kwargs['dev_deps']: SystemConfiguration._install_dev_deps()
         if kwargs['amd_gpu']: GraphicDrivers.build()
+        if kwargs['default_zsh']: SystemConfiguration._default_zsh()
         if kwargs['configure_zsh']: ZshBuilder.build()
         # TODO: The process should not be repeated when reassembling,
         #  important components should only be updated with new ones
@@ -85,3 +86,10 @@ class SystemConfiguration:
         os.system("cp xinitrc ~/.xinitrc")
         os.system("cp -r bin/ ~/")
         os.system("cp -r fonts/* ~/.fonts")
+
+    @staticmethod
+    def _default_zsh():
+        with open('~/.config/alacritty/alacritty.toml', 'r') as file:
+            alacritty_conf = file.read()
+        with open('~/.config/alacritty/alacritty.toml', 'w') as file:
+            file.write(alacritty_conf.replace('/usr/bin/bash', '/usr/bin/zsh'))

@@ -2,7 +2,7 @@ BASE_PACKAGES = [
     'tumbler', 'ffmpegthumbnailer', 'lsd', 'alacritty', 'brightnessctl',
     'automake', 'blueman', 'bluez', 'bluez-utils', 'dunst', 'fakeroot', 'feh',
     'gcc', 'gedit', 'git', 'gnu-netcat', 'htop', 'nano', 'lxappearance',
-    'mat2', 'mpd', 'mpv', 'thunar', 'ncmpcpp', 'neofetch', 'network-manager-applet', 'nitrogen',
+    'mat2', 'mpd', 'mpv', 'thunar', 'ncmpcpp', 'fastfetch', 'network-manager-applet', 'nitrogen',
     'pamixer', 'papirus-icon-theme', 'pavucontrol', 'polybar', 'autoconf', 'mpc', 'pulseaudio',
     'pulseaudio-alsa', 'python-pyalsa', 'ranger', 'redshift', 'reflector', 'rofi', 'rofi-calc', 'calcurse',
     'rofi-emoji', 'scrot', 'sudo', 'slop', 'tree', 'unrar', 'zip', 'unzip', 'uthash', 'xarchiver',
