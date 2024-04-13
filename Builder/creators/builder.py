@@ -89,7 +89,7 @@ class SystemConfiguration:
 
     @staticmethod
     def _default_zsh():
-        with open('~/.config/alacritty/alacritty.toml', 'r') as file:
+        with open(os.path.expanduser('~') + '/.config/alacritty/alacritty.toml', 'r') as file:
             alacritty_conf = file.read()
-        with open('~/.config/alacritty/alacritty.toml', 'w') as file:
+        with open(os.path.expanduser('~') + '/.config/alacritty/alacritty.toml', 'w') as file:
             file.write(alacritty_conf.replace('/usr/bin/bash', '/usr/bin/zsh'))
