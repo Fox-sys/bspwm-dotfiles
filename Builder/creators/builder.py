@@ -1,4 +1,6 @@
 import os
+import traceback
+
 import packages
 
 from logger import Logger, LoggerStatus
@@ -89,7 +91,12 @@ class SystemConfiguration:
 
     @staticmethod
     def _default_zsh():
-        with open(os.path.expanduser('~') + '/.config/alacritty/alacritty.toml', 'r') as file:
-            alacritty_conf = file.read()
-        with open(os.path.expanduser('~') + '/.config/alacritty/alacritty.toml', 'w') as file:
-            file.write(alacritty_conf.replace('/usr/bin/bash', '/usr/bin/zsh'))
+        try:
+            with open(os.path.expanduser('~') + '/.config/alacritty/alacritty.toml', 'r') as file:
+                alacritty_conf = file.read()
+            with open(os.path.expanduser('~') + '/.config/alacritty/alacritty.toml', 'w') as file:
+                file.write(alacritty_conf.replace('/usr/bin/bash', '/usr/bin/zsh'))
+        except:
+            Logger.add_record(traceback.format_exc(), status=LoggerStatus.ERROR)
+            return
+        Logger.add_record(f'zsh default', status=LoggerStatus.SUCCESS)

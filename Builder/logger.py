@@ -1,9 +1,11 @@
 from time import ctime
 from enum import Enum, auto
 
+
 class LoggerStatus(Enum):
     ERROR = auto()
     SUCCESS = auto()
+
 
 class Logger:
     filename = "build_debug.log"
@@ -15,4 +17,3 @@ class Logger:
 
         with open(Logger.filename, "a", encoding="UTF-8") as file:
             file.write(formatted_text)
-
