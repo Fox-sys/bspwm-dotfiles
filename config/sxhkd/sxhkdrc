@@ -10,22 +10,22 @@ super + Return
 
 # Hide or Unhide Polybar
 super + p
-	sh $HOME/bin/toggle-polybar
+	sh $HOME/.local/bin/toggle-polybar
 
 # Set random wallpaper
 super + w
-	sh $HOME/bin/random_wallpaper
+	sh $HOME/.local/bin/random_wallpaper
 
 # Change language
 Alt_L + shift
-	sh $HOME/bin/change_language.sh
+	sh $HOME/.local/bin/change_language.sh
 
 Shift_L + alt
-	sh $HOME/bin/change_language.sh
+	sh $HOME/.local/bin/change_language.sh
 
 # Launch Rofi Menu
 super + {r,d,x}
-    {rofi -show run,rofi -show drun,sh $HOME/bin/powermenu}
+    {rofi -show run,rofi -show drun,sh $HOME/.local/bin/powermenu}
 
 # Launch Applications
 super + {1-9,l}
@@ -34,11 +34,11 @@ super + {1-9,l}
 	pavucontrol, \
 	telegram-desktop, \
 	code, \
-	sh $HOME/bin/xcolor-pick, \
+	sh $HOME/.local/bin/xcolor-pick, \
 	lutris, \
 	sh $HOME/pycharm-2023.2.6/bin/pycharm.sh, \
 	deluge, \
-	sh $HOME/bin/screen-lock}
+	sh $HOME/.local/bin/screen-lock}
 
 # Select window to close
 ctrl + super + alt + k
@@ -46,11 +46,11 @@ ctrl + super + alt + k
 
 # Volume controls
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-    sh $HOME/bin/volume{ --up, --down, --toggle}
+    sh $HOME/.local/bin/volume{ --up, --down, --toggle}
 
 # Brightness controls
 XF86MonBrightness{Up,Down}
-    sh $HOME/bin/brightness{ --up, --down}
+    sh $HOME/.local/bin/brightness{ --up, --down}
 
 # screenshot
 Print

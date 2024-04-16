@@ -86,7 +86,7 @@ class SystemConfiguration:
         os.system("cp -r local ~/.local")
         os.system("cp -r themes ~/.themes")
         os.system("cp xinitrc ~/.xinitrc")
-        os.system("cp -r bin/ ~/")
+        os.system("cp -r bin/ ~/.local/")
         os.system("cp -r fonts/* ~/.fonts")
 
     @staticmethod
