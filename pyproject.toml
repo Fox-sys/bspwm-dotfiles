@@ -9,6 +9,7 @@ packages = [{ include = "src", from = "Builder" }]
 [tool.poetry.dependencies]
 python = "^3.11"
 argparse = "^1.4.0"
+attrs = "^23.2.0"
 
 
 [build-system]

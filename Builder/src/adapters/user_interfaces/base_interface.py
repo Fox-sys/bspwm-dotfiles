@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.adapters.interfaces.user_interface import IUserInterface
+from src.application.configurator.interfaces.user_interface import IUserInterface
 
 
 class BaseInterface(IUserInterface, ABC):
