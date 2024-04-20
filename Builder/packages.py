@@ -9,7 +9,7 @@ BASE_PACKAGES = [
     'xfce4-power-manager', 'xfce4-settings', 'xorg-xbacklight', 'zathura', 'zathura-djvu', 'zathura-pdf-mupdf',
     'cmake', 'clang', 'gzip', 'imagemagick', 'make', 'openssh', 'pulseaudio-bluetooth', 'shellcheck',
     'vlc', 'usbutils', 'picom', 'networkmanager-openvpn', 'alsa-plugins', 'alsa-tools', 'alsa-utils', 'ffmpeg',
-    'p7zip', 'gparted', 'sshfs', 'openvpn', 'xclip', 'gpick', 'wget', 'ueberzug', 'netctl', 'light', 'libreoffice',
+    'p7zip', 'gparted', 'sshfs', 'openvpn', 'xclip', 'gpick', 'wget', 'ueberzug', 'netctl', 'light',
     'breeze', 'intel-ucode', 'ttf-jetbrains-mono', 'ttf-jetbrains-mono-nerd', 'ttf-fira-code',
     'ttf-iosevka-nerd', 'zsh', 'curl'
 ]
