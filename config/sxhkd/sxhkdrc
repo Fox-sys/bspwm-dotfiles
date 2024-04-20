@@ -28,17 +28,20 @@ super + {r,d,x}
     {rofi -show run,rofi -show drun,sh $HOME/.local/bin/powermenu}
 
 # Launch Applications
-super + {1-9,l}
+super + shift + {1,q,a,z,2,w,s,x,3,e,d,c,4,r,f,v,5,t}
 	{google-chrome-stable, \
-	thunar, \
-	pavucontrol, \
 	telegram-desktop, \
+	sh $HOME/pycharm-2023.2.6/bin/pycharm.sh, \
+	pavucontrol, \
+	thunar, \
 	code, \
 	sh $HOME/.local/bin/xcolor-pick, \
 	lutris, \
-	sh $HOME/pycharm-2023.2.6/bin/pycharm.sh, \
 	deluge, \
-	sh $HOME/.local/bin/screen-lock}
+	obs}
+
+super + l
+    sh $HOME/.local/bin/screen-lock
 
 # Select window to close
 ctrl + super + alt + k
@@ -79,8 +82,14 @@ super + space
 # state/flags
 #
 
+# Move to next/prev desktop
 super + {Left,Right}
 	bspc desktop -f {prev,next}
+
+# Select desktop
+super + {1-9}
+    bspc desktop -f {1-9}
+
 
 # set the window state
 super + {t,ctrl + t,f}
@@ -95,7 +104,7 @@ alt + {_,shift + }Tab
 # focus/swap
 #
 
-# MOVE TO NEXT DESKTOP
+# MOVE APP TO NEXT DESKTOP
 super + shift + {Left,Right}
     bspc node -d {prev,next}.local --follow;
 
