@@ -1,7 +1,6 @@
 from attr import frozen
 from src.application.configurator.interfaces.system_manipulators import IPackageInstaller
 from src.application.configurator.interfaces.logger import ILogger
-from src.application.configurator import etc
 
 
 @frozen
@@ -12,6 +11,6 @@ class DependencyInstallerService:
 
     def install_dependencies(self):
         self.logger.info('Setup pacman dependencies')
-        self.pacman_installer.install_packages(etc.PACMAN_DEPENDENCIES)
+        self.pacman_installer.install_packages()
         self.logger.info('Setup Aur dependencies')
-        self.aur_installer.install_packages(etc.AUR_DEPENDENCIES)
+        self.aur_installer.install_packages()

@@ -21,3 +21,5 @@ PACMAN_DEPENDENCIES = [
 AUR_DEPENDENCIES = [
     'cava', 'i3lock-color', 'ptpython', 'google-chrome'
 ]
+
+DRIVER_PACKAGES = {}
