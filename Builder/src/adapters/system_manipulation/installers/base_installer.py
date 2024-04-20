@@ -16,4 +16,4 @@ class BaseInstaller(IPackageInstaller):
 
     def install_packages(self) -> None:
         for package in self._packages:
-            print(f'{self._install_command} {package}')
+            os.system(f'{self._install_command} {package}')
