@@ -58,3 +58,17 @@ class IZshConfigurator(ABC):
     @abstractmethod
     def configure_oh_my_zsh_theme(self):
         raise NotImplementedError
+
+
+class IPreconfigurator(ABC):
+    @abstractmethod
+    def enable_aur(self):
+        raise NotImplementedError
+
+    @abstractmethod
+    def update_arch_db(self):
+        raise NotImplementedError
+
+    @abstractmethod
+    def fill_home_dir(self):
+        raise NotImplementedError
