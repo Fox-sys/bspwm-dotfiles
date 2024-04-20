@@ -6,14 +6,14 @@ import os
 class BaseInstaller(IPackageInstaller):
     @property
     @abstractmethod
-    def packages(self) -> list[str]:
+    def _packages(self) -> list[str]:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def install_command(self) -> str:
+    def _install_command(self) -> str:
         raise NotImplementedError
 
     def install_packages(self) -> None:
-        for package in self.packages:
-            print(f'{self.install_command} {package}')
+        for package in self._packages:
+            print(f'{self._install_command} {package}')

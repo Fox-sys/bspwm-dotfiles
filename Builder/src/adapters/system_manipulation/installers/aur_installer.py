@@ -4,9 +4,9 @@ from src.adapters.system_manipulation.packages import AUR_DEPENDENCIES
 
 class AurInstaller(BaseInstaller):
     @property
-    def packages(self):
+    def _packages(self) -> list[str]:
         return AUR_DEPENDENCIES
 
     @property
-    def install_command(self) -> str:
+    def _install_command(self) -> str:
         return 'yay -S'
