@@ -11,7 +11,7 @@ class UserInterface:
 
     @staticmethod
     def welcome_banner():
-        os.system("sh Builder/assets/startup.sh")
+        os.system("sh BuilderOld/assets/startup.sh")
 
     @staticmethod
     def is_verify_response(text) -> bool:
