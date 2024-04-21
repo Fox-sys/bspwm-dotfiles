@@ -16,7 +16,8 @@ class Logger(ILogger):
 
     def _prepare_message(self, message, status):
         text = f'[{status}]: {message} - {datetime.now().strftime("%H:%M:%S")}\n'
-        self._print_message(message)
+        self._print_message(text)
+        self._save_to_file(text)
 
     def _print_message(self, message):
         print(message)
