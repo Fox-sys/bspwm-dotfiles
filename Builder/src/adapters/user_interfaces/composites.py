@@ -3,6 +3,8 @@ from typing import Type
 from src.adapters.system_manipulation.component_installer import ComponentInstaller
 from src.adapters.system_manipulation.installers.driver_installers.amd_free_driver_installer import \
     AMDFreeDriverInstaller
+from src.adapters.system_manipulation.post_install_configurator import PostInstallConfigurator
+from src.adapters.system_manipulation.zsh_configurator import ZshConfigurator
 from src.application.configurator import services
 from src.adapters.system_manipulation.preconfigure_system import Preconfigurator
 from src.adapters.logger.logger import Logger
@@ -55,4 +57,16 @@ def create_driver_install_service(driver_type) -> services.DriverInstallService 
 def create_component_installer_service() -> services.ComponentInstallerService:
     return services.ComponentInstallerService(
         logger=Logger(), component_installer=ComponentInstaller()
+    )
+
+
+def create_configure_zsh_service() -> services.ConfigureZshService:
+    return services.ConfigureZshService(
+        logger=Logger(), zsh_configurator=ZshConfigurator()
+    )
+
+
+def create_post_install_configuration_service() -> services.PostInstallConfigurationService:
+    return services.PostInstallConfigurationService(
+        logger=Logger(), post_install_configurator=PostInstallConfigurator()
     )

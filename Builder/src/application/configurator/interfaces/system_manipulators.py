@@ -72,3 +72,13 @@ class IPreconfigurator(ABC):
     @abstractmethod
     def fill_home_dir(self):
         raise NotImplementedError
+
+
+class IPostInstallConfigurator(ABC):
+    @abstractmethod
+    def enable_services(self):
+        raise NotImplementedError
+
+    @abstractmethod
+    def apply_patches(self):
+        raise NotImplementedError

@@ -15,19 +15,23 @@ class InstallInterface(BaseInterface):
         return [
             {'name': 'install_dependencies', 'question': 'Do you want to install base dependencies?'},
             {'name': 'install_drivers', 'question': 'Do you want to install graphics driver?'},
-            {'name': 'install_components', 'questions': 'Do you want to install components?'}
+            {'name': 'install_components', 'questions': 'Do you want to install components?'},
+            {'name': 'zsh_configure', 'questions': 'Do you want to install powerlevel10k theme for zsh?'
+                                                   '(when you see zsh, quit it and installation will continue)'},
         ]
 
-    def _configure_system(self, install_dependencies: bool, install_drivers: bool, apply_configs: bool):
-        # self._preconfigure_system()
+    def _configure_system(self, install_dependencies: bool, install_drivers: bool, install_components: bool,
+                          zsh_configure: bool):
+        self._preconfigure_system()
         if install_dependencies:
-            # self._install_dependencies()
-            ...
+            self._install_dependencies()
         if install_drivers:
-            # self._install_drivers()
-            ...
-        if apply_configs:
-            self._apply_configs()
+            self._install_drivers()
+        if install_components:
+            self._install_components()
+        if zsh_configure:
+            self._configure_zsh()
+        self._post_install_configuration()
 
     def _preconfigure_system(self):
         preconfiguration_service = composites.create_preconfigure_service()
@@ -48,6 +52,14 @@ class InstallInterface(BaseInterface):
         if driver_installer_service:
             driver_installer_service.install_drivers()
 
-    def install_components(self):
+    def _install_components(self):
         component_installer_service = composites.create_component_installer_service()
         component_installer_service.install_components()
+
+    def _configure_zsh(self):
+        configure_zsh_service = composites.create_configure_zsh_service()
+        configure_zsh_service.configure_oh_my_zsh_theme()
+
+    def _post_install_configuration(self):
+        post_install_configuration_service = composites.create_post_install_configuration_service()
+        post_install_configuration_service.post_configuration()
