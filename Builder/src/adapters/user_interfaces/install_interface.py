@@ -15,9 +15,9 @@ class InstallInterface(BaseInterface):
         return [
             {'name': 'install_dependencies', 'question': 'Do you want to install base dependencies?'},
             {'name': 'install_drivers', 'question': 'Do you want to install graphics driver?'},
-            {'name': 'install_components', 'questions': 'Do you want to install components?'},
-            {'name': 'zsh_configure', 'questions': 'Do you want to install powerlevel10k theme for zsh?'
-                                                   '(when you see zsh, quit it and installation will continue)'},
+            {'name': 'install_components', 'question': 'Do you want to install components?'},
+            {'name': 'zsh_configure', 'question': 'Do you want to install powerlevel10k theme for zsh?'
+                                                  '(when you see zsh, quit it and installation will continue)'},
         ]
 
     def _configure_system(self, install_dependencies: bool, install_drivers: bool, install_components: bool,
