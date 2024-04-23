@@ -14,8 +14,8 @@ class Logger(ILogger):
     def error(self, message):
         self._prepare_message(message, LoggerStatusEnum.ERROR)
 
-    def _prepare_message(self, message, status):
-        text = f'[{status}]: {message} - {datetime.now().strftime("%H:%M:%S")}\n'
+    def _prepare_message(self, message, status: LoggerStatusEnum):
+        text = f'[{status.value}]: {message} - {datetime.now().strftime("%H:%M:%S")}\n'
         self._print_message(text)
         self._save_to_file(text)
 
@@ -23,5 +23,5 @@ class Logger(ILogger):
         print(message)
 
     def _save_to_file(self, message):
-        with open(path.expanduser('~') + 'bspwm_install_logs.log', 'a') as file:
+        with open(path.expanduser('~') + '/bspwm_install_logs.log', 'a') as file:
             file.write(message)

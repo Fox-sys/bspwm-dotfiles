@@ -3,5 +3,5 @@ from abc import ABC, abstractmethod
 
 class IUserInterface(ABC):
     @abstractmethod
-    def start(self) -> None:
+    def start(self) -> dict:
         raise NotImplementedError

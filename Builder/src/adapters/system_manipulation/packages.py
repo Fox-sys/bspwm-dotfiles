@@ -1,3 +1,5 @@
+from src.application.configurator.enums import DriverTypeEnum
+
 PACMAN_DEPENDENCIES = [
     'tumbler', 'ffmpegthumbnailer', 'lsd', 'alacritty', 'brightnessctl',
     'automake', 'blueman', 'bluez', 'bluez-utils', 'dunst', 'fakeroot', 'feh',
@@ -22,4 +24,8 @@ AUR_DEPENDENCIES = [
     'cava', 'i3lock-color', 'ptpython', 'google-chrome'
 ]
 
-DRIVER_PACKAGES = {}
+DRIVER_PACKAGES = {
+    DriverTypeEnum.AMD_GPU_FREE: [
+        'mesa', 'xf86-video-amdgpu', 'vulkan-radeon', 'libva-mesa-driver'
+    ]
+}

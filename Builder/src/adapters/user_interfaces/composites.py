@@ -1,7 +1,13 @@
+from typing import Type
+
+from src.adapters.system_manipulation.installers.driver_installers.amd_free_driver_installer import \
+    AMDFreeDriverInstaller
 from src.application.configurator import services
 from src.adapters.system_manipulation.preconfigure_system import Preconfigurator
 from src.adapters.logger.logger import Logger
 from src.adapters.system_manipulation.installers import PacmanInstaller, AurInstaller
+from src.application.configurator.enums import DriverTypeEnum
+from src.application.configurator.interfaces.system_manipulators import IDriverInstaller
 
 
 def create_preconfigure_service() -> services.PreconfigureSystemService:
@@ -11,4 +17,35 @@ def create_preconfigure_service() -> services.PreconfigureSystemService:
 def create_dependency_installer_service() -> services.DependencyInstallerService:
     return services.DependencyInstallerService(
         pacman_installer=PacmanInstaller(), aur_installer=AurInstaller(), logger=Logger()
+    )
+
+
+def create_driver_install_service(driver_type) -> services.DriverInstallService | None:
+    driver_installer: Type[IDriverInstaller]
+    match driver_type:
+        case DriverTypeEnum.AMD_GPU_FREE:
+            driver_installer = AMDFreeDriverInstaller
+        case DriverTypeEnum.AMD_GPU_PRO:
+            Logger().warning('Not implemented')
+            return
+        case DriverTypeEnum.NVIDIA_NVCX_AND_NVDX:
+            Logger().warning('Not implemented')
+            return
+        case DriverTypeEnum.NVIDIA_MAXWELL_DKMS:
+            Logger().warning('Not implemented')
+            return
+        case DriverTypeEnum.NVIDIA_MAXWELL:
+            Logger().warning('Not implemented')
+            return
+        case DriverTypeEnum.NVIDIA_KEPLER:
+            Logger().warning('Not implemented')
+            return
+        case DriverTypeEnum.NVIDIA_TESLA:
+            Logger().warning('Not implemented')
+            return
+        case _:
+            return
+
+    return services.DriverInstallService(
+        driver_installer=driver_installer(), logger=Logger()
     )
