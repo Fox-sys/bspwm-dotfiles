@@ -9,7 +9,7 @@ class AMDFreeDriverInstaller(BaseDriverInstaller):
         return DriverTypeEnum.AMD_GPU_FREE
 
     def _install_command(self) -> str:
-        return 'sudo pacman -S'
+        return 'sudo pacman -S --noconfirm'
 
     @property
     def _packages(self) -> list[str]:
