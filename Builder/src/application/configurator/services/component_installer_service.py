@@ -17,7 +17,7 @@ class ComponentInstallerService:
         self.logger.info('Themes are installing')
         self.component_installer.install_themes()
         self.logger.info('Fonts are installing')
-        self.component_installer.install_fonts()
+        self.component_installer.move_fonts()
         self.logger.info('Configs are installing')
         self.component_installer.move_configs()
         self.logger.info('Images are installing')

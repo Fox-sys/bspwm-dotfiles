@@ -42,7 +42,7 @@ class IComponentInstaller(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def install_fonts(self):
+    def move_fonts(self):
         raise NotImplementedError
 
     @abstractmethod

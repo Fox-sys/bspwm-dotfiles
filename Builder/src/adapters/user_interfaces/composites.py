@@ -1,5 +1,6 @@
 from typing import Type
 
+from src.adapters.system_manipulation.component_installer import ComponentInstaller
 from src.adapters.system_manipulation.installers.driver_installers.amd_free_driver_installer import \
     AMDFreeDriverInstaller
 from src.application.configurator import services
@@ -48,4 +49,10 @@ def create_driver_install_service(driver_type) -> services.DriverInstallService 
 
     return services.DriverInstallService(
         driver_installer=driver_installer(), logger=Logger()
+    )
+
+
+def create_component_installer_service() -> services.ComponentInstallerService:
+    return services.ComponentInstallerService(
+        logger=Logger(), component_installer=ComponentInstaller()
     )
