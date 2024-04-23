@@ -7,7 +7,7 @@
 - Установить Arch
 - Отредактировать файл `/etc/locale.gen` и раскоментировать `ru_RU.UTF-8`
 - `sudo locale-gen`
-- `sudo pacman -S xorg xorg-xinit bspwm sxhkd xterm git python==3.11.8 poetry git`
+- `sudo pacman -S xorg xorg-xinit bspwm sxhkd xterm git python3 poetry git`
 - Отредактировать файл `/etc/X11/xinit/xinitrc` (`exec xterm -geometry 80x66+0+0 -name login` -> `exec bspwm`)
 - `git clone https://github.com/Fox-sys/bspwm-dotfiles.git`
 - `cd bspwm-dotfiles`
