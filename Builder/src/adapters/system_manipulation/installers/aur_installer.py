@@ -16,4 +16,4 @@ class AurInstaller(BaseInstaller):
     def install_packages(self) -> None:
         os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
         os.system("cd /tmp/yay && makepkg -si")
-        super(BaseInstaller).install_packages()
+        super().install_packages()

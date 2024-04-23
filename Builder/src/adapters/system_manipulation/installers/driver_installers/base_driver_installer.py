@@ -18,4 +18,4 @@ class BaseDriverInstaller(BaseInstaller, IDriverInstaller, ABC):
     def install_packages(self) -> None:
         self._prepare_multilib()
         self._install_multilib()
-        super(BaseInstaller).install_packages()
+        super().install_packages()
