@@ -11,7 +11,7 @@ class AurInstaller(BaseInstaller):
 
     @property
     def _install_command(self) -> str:
-        return 'yay -S'
+        return 'yay -Sy'
 
     def install_packages(self) -> None:
         os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")

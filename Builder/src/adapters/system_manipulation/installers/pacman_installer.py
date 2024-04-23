@@ -9,4 +9,4 @@ class PacmanInstaller(BaseInstaller):
 
     @property
     def _install_command(self) -> str:
-        return 'sudo pacman -S'
+        return 'sudo pacman -Sy'
