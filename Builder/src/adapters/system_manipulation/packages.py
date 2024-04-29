@@ -16,7 +16,7 @@ PACMAN_DEPENDENCIES = [
     'ttf-iosevka-nerd', 'zsh', 'curl', 'screenkey', 'timeshift', 'pinta', 'kdenlive', 'wireshark-qt', 'ghex',
     'keepassxc', 'audacity', 'gufw', 'python-pywal',
     'bleachbit', 'veracrypt', 'homebank', 'gtkhash', 'gnome-firmware', 'touche', 'dconf-editor',
-    'obs-studio', 'telegram-desktop', 'tmux', 'code',
+    'obs-studio', 'telegram-desktop', 'code',
     'deluge-gtk', 'flameshot', 'sqlitebrowser', 'obsidian', 'python-pip', 'cloc',
 ]
 

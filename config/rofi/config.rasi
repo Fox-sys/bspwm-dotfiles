@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "run,drun,calc";
     lines: 5;
     font: "JetBrainsMono Nerd Font 14";
     show-icons: true;
@@ -11,7 +11,7 @@ configuration{
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: "   window";
+    display-calc: "   calc";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
 }

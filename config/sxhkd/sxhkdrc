@@ -24,8 +24,8 @@ Shift_L + alt
 	sh $HOME/.local/bin/change_language.sh
 
 # Launch Rofi Menu
-super + {r,d,x}
-    {rofi -show run,rofi -show drun,sh $HOME/.local/bin/powermenu}
+super + {r,d,x,e}
+    {rofi -show run,rofi -show drun,sh $HOME/.local/bin/powermenu,  rofi -show calc}
 
 # Launch Applications
 super + shift + {1,q,a,z,2,w,s,x,3,e,d,c,4,r,f,v,5,t}
