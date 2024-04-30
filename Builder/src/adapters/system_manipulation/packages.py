@@ -13,9 +13,8 @@ PACMAN_DEPENDENCIES = [
     'vlc', 'usbutils', 'picom', 'networkmanager-openvpn', 'alsa-plugins', 'alsa-tools', 'alsa-utils', 'ffmpeg',
     'p7zip', 'gparted', 'sshfs', 'openvpn', 'xclip', 'gpick', 'wget', 'ueberzug', 'netctl', 'light',
     'breeze', 'intel-ucode', 'ttf-jetbrains-mono', 'ttf-jetbrains-mono-nerd', 'ttf-fira-code',
-    'ttf-iosevka-nerd', 'zsh', 'curl', 'screenkey', 'timeshift', 'pinta', 'kdenlive', 'wireshark-qt', 'ghex',
-    'keepassxc', 'audacity', 'gufw', 'python-pywal',
-    'bleachbit', 'veracrypt', 'homebank', 'gtkhash', 'gnome-firmware', 'touche', 'dconf-editor',
+    'ttf-iosevka-nerd', 'zsh', 'curl', 'screenkey', 'timeshift', 'ghex', 'gufw', 'python-pywal',
+    'bleachbit', 'veracrypt', 'gtkhash', 'gnome-firmware', 'touche', 'dconf-editor',
     'obs-studio', 'telegram-desktop', 'code',
     'deluge-gtk', 'flameshot', 'sqlitebrowser', 'python-pip', 'cloc',
 ]
