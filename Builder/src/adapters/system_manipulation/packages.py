@@ -6,10 +6,10 @@ PACMAN_DEPENDENCIES = [
     'gcc', 'gedit', 'git', 'gnu-netcat', 'btop', 'lxappearance',
     'mat2', 'mpd', 'mpv', 'thunar', 'ncmpcpp', 'fastfetch', 'network-manager-applet', 'nitrogen',
     'pamixer', 'papirus-icon-theme', 'pavucontrol', 'polybar', 'autoconf', 'mpc', 'pipewire',
-    'pipewire-alsa', 'python-pyalsa', 'ranger', 'redshift', 'reflector', 'rofi', 'rofi-calc', 'calcurse',
-    'rofi-emoji', 'scrot', 'sudo', 'slop', 'tree', 'unrar', 'zip', 'unzip', 'uthash', 'xarchiver',
+    'pipewire-alsa', 'python-pyalsa', 'ranger', 'redshift', 'reflector', 'rofi', 'rofi-calc',
+    'rofi-emoji', 'sudo', 'slop', 'tree', 'unrar', 'zip', 'unzip', 'uthash', 'xarchiver',
     'xfce4-power-manager', 'xfce4-settings', 'xorg-xbacklight', 'zathura', 'zathura-djvu', 'zathura-pdf-mupdf',
-    'cmake', 'clang', 'gzip', 'imagemagick', 'make', 'openssh', 'shellcheck',
+    'cmake', 'clang', 'gzip', 'make', 'openssh', 'shellcheck',
     'vlc', 'usbutils', 'picom', 'networkmanager-openvpn', 'alsa-plugins', 'alsa-tools', 'alsa-utils', 'ffmpeg',
     'p7zip', 'gparted', 'sshfs', 'openvpn', 'xclip', 'gpick', 'wget', 'ueberzug', 'netctl', 'light',
     'breeze', 'intel-ucode', 'ttf-jetbrains-mono', 'ttf-jetbrains-mono-nerd', 'ttf-fira-code',
@@ -17,7 +17,7 @@ PACMAN_DEPENDENCIES = [
     'keepassxc', 'audacity', 'gufw', 'python-pywal',
     'bleachbit', 'veracrypt', 'homebank', 'gtkhash', 'gnome-firmware', 'touche', 'dconf-editor',
     'obs-studio', 'telegram-desktop', 'code',
-    'deluge-gtk', 'flameshot', 'sqlitebrowser', 'obsidian', 'python-pip', 'cloc',
+    'deluge-gtk', 'flameshot', 'sqlitebrowser', 'python-pip', 'cloc',
 ]
 
 AUR_DEPENDENCIES = [
