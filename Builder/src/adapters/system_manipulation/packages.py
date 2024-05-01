@@ -8,7 +8,7 @@ PACMAN_DEPENDENCIES = [
     'pamixer', 'papirus-icon-theme', 'pavucontrol', 'polybar', 'autoconf', 'mpc', 'pipewire',
     'pipewire-alsa', 'python-pyalsa', 'ranger', 'redshift', 'reflector', 'rofi', 'rofi-calc',
     'rofi-emoji', 'sudo', 'slop', 'tree', 'unrar', 'zip', 'unzip', 'uthash', 'xarchiver',
-    'xfce4-power-manager', 'xfce4-settings', 'xorg-xbacklight', 'zathura', 'zathura-djvu', 'zathura-pdf-mupdf',
+    'xorg-xbacklight', 'zathura', 'zathura-djvu', 'zathura-pdf-mupdf',
     'cmake', 'clang', 'gzip', 'make', 'openssh', 'shellcheck',
     'vlc', 'usbutils', 'picom', 'networkmanager-openvpn', 'alsa-plugins', 'alsa-tools', 'alsa-utils', 'ffmpeg',
     'p7zip', 'gparted', 'sshfs', 'openvpn', 'xclip', 'gpick', 'wget', 'ueberzug', 'netctl', 'light',
