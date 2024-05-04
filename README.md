@@ -11,9 +11,7 @@
 - Отредактировать файл `/etc/X11/xinit/xinitrc` (`exec xterm -geometry 80x66+0+0 -name login` -> `exec bspwm`)
 - `git clone https://github.com/Fox-sys/bspwm-dotfiles.git`
 - `cd bspwm-dotfiles`
-- `export PYTHONPATH="${PYTHONPATH}:/home/username/bspwm-dotfiles/Builder"`
-- `poetry install`
-- `poetry run python Builder/src/run/install.py`
+- `./install.sh`
 - `startx`
 
 ### !!! Если этот способ не сработал, можно использовать старый билдер `python BuilderOld/install.py` !!!
