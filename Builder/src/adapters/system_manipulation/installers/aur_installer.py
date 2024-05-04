@@ -11,9 +11,4 @@ class AurInstaller(BaseInstaller):
 
     @property
     def _install_command(self) -> str:
-        return 'yay -S --noconfirm'
-
-    def install_packages(self) -> None:
-        os.system("git -C /tmp clone https://aur.archlinux.org/yay.git")
-        os.system("cd /tmp/yay && makepkg -si")
-        super().install_packages()
+        return 'sudo aura -Ax --noconfirm'
