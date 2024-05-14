@@ -4,7 +4,7 @@
 
 ## Установка
 
-- Установить Arch
+- Установить Arch (не стоит ставить multilib руками, иначе установка драйверов работать не будет)
 - Отредактировать файл `/etc/locale.gen` и раскоментировать `ru_RU.UTF-8`
 - `sudo locale-gen`
 - `sudo pacman -S xorg xorg-xinit bspwm sxhkd xterm git python3 poetry git`
