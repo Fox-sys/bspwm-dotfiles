@@ -42,6 +42,8 @@ bspc rule -a Alacritty desktop='^2' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
 bspc rule -a jetbrains-pycharm desktop='^4' follow=on
 bspc rule -a Lutris desktop='^5' follow=on
+bspc rule -a YandexMusic desktop='^3' follow=on
+bspc rule -a Deluge desktop='^6' follow=off
 # bspc rule -a firefox state=floating
 # bspc rule -a firefox desktop='^2' follow=on
 

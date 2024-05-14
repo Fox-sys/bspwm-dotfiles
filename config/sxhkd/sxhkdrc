@@ -38,7 +38,9 @@ super + shift + {1,q,a,z,2,w,s,x,3,e,d,c,4,r,f,v,5,t}
 	deluge, \
 	obs, \
 	heroic, \
-	steam}
+	steam, \
+	yandex-music, \
+	openoffice}
 
 super + l
     sh $HOME/.local/bin/screen-lock

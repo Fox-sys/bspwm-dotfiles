@@ -55,6 +55,7 @@ program = "/usr/bin/zsh"
 dynamic_title = true
 opacity = 0.85
 title = "Alacritty"
+padding = { "x" = 5, "y" = 9 }
 
 [window.class]
 general = "Alacritty"
