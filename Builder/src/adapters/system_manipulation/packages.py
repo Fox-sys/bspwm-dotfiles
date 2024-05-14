@@ -25,7 +25,7 @@ AUR_DEPENDENCIES = [
 
 DRIVER_PACKAGES = {
     DriverTypeEnum.AMD_GPU_FREE: [
-        'mesa', 'vulkan-radeon', 'libva-mesa-driver', 'lib32-mesa', 'lib32-vulkan-radeon',
-        'vulkan-icd-loader', 'lib32-vulkan-icd-loader'
+        'mesa', 'vulkan-radeon', 'libva-mesa-driver', 'lib32-mesa', 'lib32-vulkan-radeon', 'vulkan-tools',
+        'vulkan-headers', 'vulkan-icd-loader', 'lib32-vulkan-icd-loader'
     ]
 }
