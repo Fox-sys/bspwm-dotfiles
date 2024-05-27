@@ -22,8 +22,12 @@ Shift_L + alt
 	sh $HOME/.local/bin/change_language.sh
 
 # Launch Rofi Menu
-super + {r,d,x,e}
-    {rofi -show run,rofi -show drun,sh $HOME/.local/bin/powermenu, rofi -show calc}
+super + {r,d,x,e,v}
+    {rofi -show run, \
+    rofi -show drun, \
+    sh $HOME/.local/bin/powermenu, \
+    rofi -show calc, \
+    rofi -modi "clipboard:greenclip print" -show clipboard}
 
 # Launch Applications
 super + shift + {1,q,a,z,2,w,s,x,3,e,d,c,4,r,f,v,5,t}
@@ -40,7 +44,7 @@ super + shift + {1,q,a,z,2,w,s,x,3,e,d,c,4,r,f,v,5,t}
 	heroic, \
 	steam, \
 	yandex-music, \
-	openoffice}
+	onlyoffice-desktopeditors}
 
 super + l
     sh $HOME/.local/bin/screen-lock

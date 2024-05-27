@@ -8,7 +8,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # workspaces
 bspc monitor primary -d 1 2 3 4 5 6 7
-bspc monitor HDMI-A-0 -d 8  # TODO: multiple monitors
+bspc monitor HDMI-1 -d 8  # TODO: multiple monitors
 
 bspc config focus_follows_pointer false
 
@@ -44,6 +44,7 @@ bspc rule -a jetbrains-pycharm desktop='^4' follow=on
 bspc rule -a Lutris desktop='^5' follow=on
 bspc rule -a YandexMusic desktop='^3' follow=on
 bspc rule -a Deluge desktop='^6' follow=off
+bspc rule -a "ONLYOFFICE Desktop Editors" desktop='^7' follow=on
 # bspc rule -a firefox state=floating
 # bspc rule -a firefox desktop='^2' follow=on
 
@@ -68,4 +69,5 @@ picom --config $HOME/.config/bspwm/picom_configurations/1.conf &
 # autostart
 flameshot &
 telegram-desktop &
-google-chrome-stable &
+greenclip daemon &
+# google-chrome-stable &
