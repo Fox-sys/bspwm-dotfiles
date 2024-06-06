@@ -13,5 +13,3 @@
 - `cd bspwm-dotfiles`
 - `./install.sh`
 - `startx`
-
-### !!! Если этот способ не сработал, можно использовать старый билдер `python BuilderOld/install.py` !!!
